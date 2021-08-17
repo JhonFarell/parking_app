@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">parking</string>
+    <string name="welcome_text">Добрый день! Выполните вход или зарегистрируйтесь в системе. </string>
+    <string name="parking_app">ParkingAPP</string>
+    <string name="sign_in">Регистрация</string>
+    <string name="log_in">Войти</string>
+    <string name="registration_sign">Регистрация</string>
+    <string name="registration_button">Зарегистрироваться</string>
+    <string name="enter_pass">Введите пароль</string>
+    <string name="enter_email">Введите E-MAIL</string>
+    <string name="reg_sign">Registration</string>
+    <string name="go_back">Вернуться</string>
+
+
+</resources>

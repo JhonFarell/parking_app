@@ -14,11 +14,13 @@ import com.google.firebase.auth.FirebaseUser
 
 class Registration : AppCompatActivity() {
     lateinit var bindingClass: ActivityRegistrationBinding
+    lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingClass = ActivityRegistrationBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
+        auth = FirebaseAuth.getInstance()
 
     }
 
@@ -51,7 +53,7 @@ class Registration : AppCompatActivity() {
                     val email: String = bindingClass.emailReg.text.toString().trim()
                     val pword: String = bindingClass.passwordReg.text.toString().trim()
 
-                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, pword)
+                    auth.createUserWithEmailAndPassword(email, pword)
                         .addOnCompleteListener{ task ->
                             if (task.isSuccessful) {
                                 val firebaseUser: FirebaseUser = task.result!!.user!!

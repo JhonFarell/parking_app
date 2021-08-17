@@ -5,13 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import com.google.firebase.auth.FirebaseAuth
 import com.kek.parking.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var auth: FirebaseAuth
-    private  var firstTimeUser = true
     lateinit var bindingClass: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         bindingClass = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
 
-        auth = FirebaseAuth.getInstance()
+
 
     }
 

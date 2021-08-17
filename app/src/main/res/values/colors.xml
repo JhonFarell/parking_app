@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="mainBackgroundColor">#DCDCDC</color>
     <color name="buttonsColor">#262525</color>
+    <color name="panelColor">#C0C0C0</color>
 </resources>

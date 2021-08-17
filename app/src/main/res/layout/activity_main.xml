@@ -2,10 +2,119 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/size"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/mainBackgroundColor"
+    android:background="@color/parking"
     tools:context=".MainActivity">
 
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/parking1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mainBackgroundColor"
+        android:padding="10dp"
+        tools:context=".MainActivity"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-16dp">
+
+        <TextView
+            android:id="@+id/logoTV2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alfa_slab"
+            android:text="@string/parking_app"
+            android:textColor="@color/buttonsColor"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/place2"
+            app:layout_constraintEnd_toEndOf="@+id/place3"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/place1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.19999999" />
+
+        <TextView
+            android:id="@+id/place2"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/parking_shape"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="@string/place2"
+            android:textColor="@color/buttonsColor"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/place1"
+            app:layout_constraintStart_toEndOf="@+id/place1"
+            app:layout_constraintTop_toTopOf="@+id/place1" />
+
+        <TextView
+            android:id="@+id/place3"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/parking_shape"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="@string/place3"
+            android:textColor="@color/buttonsColor"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/place2"
+            app:layout_constraintStart_toEndOf="@+id/place2"
+            app:layout_constraintTop_toTopOf="@+id/place2" />
+
+        <TextView
+            android:id="@+id/place1"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:background="@drawable/parking_shape"
+            android:gravity="center"
+            android:onClick="parking1Clicks"
+            android:padding="20dp"
+            android:text="@string/place1"
+            android:textColor="@color/buttonsColor"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.241"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.49" />
+
+        <ImageView
+            android:id="@+id/Logo"
+            android:layout_width="112dp"
+            android:layout_height="89dp"
+            app:layout_constraintBottom_toBottomOf="@+id/logoTV2"
+            app:layout_constraintStart_toEndOf="@+id/logoTV2"
+            app:layout_constraintTop_toTopOf="@+id/logoTV2"
+            app:srcCompat="@drawable/logo"
+            android:contentDescription="@string/logo" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/floor1"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/place1"
+            app:layout_constraintEnd_toEndOf="@+id/place1"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/place1"
+            app:layout_constraintTop_toBottomOf="@+id/logoTV2"
+            app:layout_constraintVertical_bias="0.86" />
+
+        <Button
+            android:id="@+id/releasePlace"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="100dp"
+            android:text="@string/release_place"
+            app:layout_constraintEnd_toEndOf="@+id/place3"
+            app:layout_constraintStart_toStartOf="@+id/place1"
+            app:layout_constraintTop_toBottomOf="@+id/place2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

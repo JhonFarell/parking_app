@@ -6,4 +6,10 @@ object constances {
     const val REGISTER_SUCCESS = "Регистрация успешно завершена."
     const val REGISTER_FAILED = "Ошибка при регистрации."
     const val LOGIN_FAILED = "Неверный логин или пароль"
+    const val RENT1 = "Забронировать место №1"
+    const val RENT2 = "Забронировать место №2"
+    const val RENT3 = "Забронировать место №3"
+    const val  RENT_TITLE = "Окно подтверждения"
+    const val  OK = "OK"
+    const val  CANCEL = "Отмена"
 }

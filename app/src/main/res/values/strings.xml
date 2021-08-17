@@ -10,6 +10,13 @@
     <string name="enter_email">Введите E-MAIL</string>
     <string name="reg_sign">Registration</string>
     <string name="go_back">Вернуться</string>
+    <string name="place1">Место №1</string>
+    <string name="place2">Место №2</string>
+    <string name="place3">Место №3</string>
+    <string name="floor1">I Этаж</string>
+    <string name="logo">Logo</string>
+    <string name="release_place">Освободить место</string>
+
 
 
 </resources>

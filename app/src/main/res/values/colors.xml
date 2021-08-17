@@ -10,4 +10,5 @@
     <color name="mainBackgroundColor">#DCDCDC</color>
     <color name="buttonsColor">#262525</color>
     <color name="panelColor">#C0C0C0</color>
+    <color name="parking">#90EE90</color>
 </resources>

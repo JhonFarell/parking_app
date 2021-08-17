@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Admin/AndroidStudioProjects/parking/app/src/main/res/drawable/logo_PNG_foreground.xml" value="0.23981481481481481" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/parking/app/src/main/res/drawable/parking_shape.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/parking/app/src/main/res/drawable/roundcorners.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/parking/app/src/main/res/layout/activity_login_screen.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/parking/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/parking/app/src/main/res/layout/activity_registration.xml" value="0.25" />

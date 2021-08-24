@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             .document("$currentUser")
             .get().addOnSuccessListener {
                 place = it.get("${constances.FIELD_PLACETAKEN}").toString()
-                if (place.equals("")) {
+                if (place.isEmpty()) {
                     Toast.makeText(this, "${constances.NO_PLACE_TAKEN}", Toast.LENGTH_SHORT).show()
                 } else {
 
@@ -52,7 +52,6 @@ class MainActivity : AppCompatActivity() {
                         db.collection("${constances.DB_USERS}")
                             .document("$currentUser")
                             .get().addOnSuccessListener {
-                                place = it.get("${constances.FIELD_PLACETAKEN}").toString()
                                 db.collection("${constances.DB_USERS}")
                                     .document("$currentUser")
                                     .update(
@@ -89,21 +88,21 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-        fun parkingClicks(view: View) {
+    fun parkingClicks(view: View) {
             /*При нажатии на иконку парковочного места, забивает за юзером выбранное место
                При попытке занять более одного места выдает тост о том, что так нельзя
                Все действия через обращения в БД
             */
             currentUser = auth.uid.toString()
+            val callDialog = AlertDialog.Builder(this)
+
             db.collection("${constances.DB_USERS}")
                 .document("$currentUser")
                 .get().addOnSuccessListener {
                     place = it.get("${constances.FIELD_PLACETAKEN}").toString()
-                    if (place.equals("")) {
+                    if (place.isEmpty()) {
                         when (view.id) {
                             bindingClass.place1.id -> {
-                                currentUser = auth.uid.toString()
-                                val callDialog = AlertDialog.Builder(this)
                                 callDialog.setTitle("${constances.RENT_TITLE}")
                                 callDialog.setMessage("${constances.RENT1}")
                                 callDialog.setIcon(R.drawable.question)
@@ -137,8 +136,6 @@ class MainActivity : AppCompatActivity() {
 
                             }
                             bindingClass.place2.id -> {
-                                currentUser = auth.uid.toString()
-                                val callDialog = AlertDialog.Builder(this)
                                 callDialog.setTitle("${constances.RENT_TITLE}")
                                 callDialog.setMessage("${constances.RENT2}")
                                 callDialog.setIcon(R.drawable.question)
@@ -172,8 +169,6 @@ class MainActivity : AppCompatActivity() {
 
                             }
                             bindingClass.place3.id -> {
-                                currentUser = auth.uid.toString()
-                                val callDialog = AlertDialog.Builder(this)
                                 callDialog.setTitle("${constances.RENT_TITLE}")
                                 callDialog.setMessage("${constances.RENT3}")
                                 callDialog.setIcon(R.drawable.question)

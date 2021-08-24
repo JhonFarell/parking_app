@@ -1,6 +1,7 @@
 package com.kek.parking
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -43,7 +44,7 @@ class Registration : AppCompatActivity() {
 
                 passwordIsEmpty -> {
                     Toast.makeText(
-                        this@Registration,
+                        this,
                         "${constances.PWORD_ERROR_MESSAGE}",
                         Toast.LENGTH_SHORT
                     ).show()
@@ -59,16 +60,19 @@ class Registration : AppCompatActivity() {
                                 val firebaseUser: FirebaseUser = task.result!!.user!!
 
                             Toast.makeText(
-                                this@Registration,
+                                this,
                                 "${constances.REGISTER_SUCCESS}",
                                 Toast.LENGTH_SHORT
                             ).show()
+
+                                var intent = Intent (this, MainActivity::class.java)
+                                startActivity(intent)
                                 finish()
 
                         }
                             else {
                                 Toast.makeText(
-                                    this@Registration,
+                                    this,
                                     "${constances.REGISTER_FAILED}",
                                     Toast.LENGTH_SHORT
                                 ).show()

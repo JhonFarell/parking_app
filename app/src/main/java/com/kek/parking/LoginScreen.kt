@@ -35,10 +35,10 @@ class LoginScreen : AppCompatActivity() {
 
         when {
             emailIsEmpty -> {
-                Toast.makeText(this@LoginScreen,"${constances.LOGIN_FAILED}", Toast.LENGTH_SHORT)
+                Toast.makeText(this,"${constances.LOGIN_FAILED}", Toast.LENGTH_SHORT)
             }
             passwordIsEmpty -> {
-                Toast.makeText(this@LoginScreen, "${constances.LOGIN_FAILED}", Toast.LENGTH_SHORT)
+                Toast.makeText(this, "${constances.LOGIN_FAILED}", Toast.LENGTH_SHORT)
             }
             else -> {
                 var email: String = bindingClass.loginField.text.toString().trim()
@@ -52,7 +52,7 @@ class LoginScreen : AppCompatActivity() {
                            finish()
                     }
                         else {
-                           Toast.makeText(this@LoginScreen, "${constances.LOGIN_FAILED}", Toast.LENGTH_SHORT)
+                           Toast.makeText(this, "${constances.LOGIN_FAILED}", Toast.LENGTH_SHORT)
                     }
 
                     }

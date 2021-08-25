@@ -36,20 +36,24 @@ class MainActivity : AppCompatActivity() {
         /*Обращается в БД юзеров, оттуда вытягивает значение занято/свободно что-либо юзером, если занято -
         освобождает, в противном случае - выдает тост о том, что, сперва, нужно занять место
          */
-        db.collection("${constances.DB_USERS}")
-            .document("$currentUser")
+        db.collection(constances.DB_USERS)
+            /**
+             * String templates удобно использовать, когда нужно конкатенировать несколько строк
+             * или вставлять их в литерал, напрмер "Мой хуй - ${myPenis.size} см"
+             * В данном случае от них нет никакого профита, понятней просто обращаться к переменным и константам
+             */
+            .document(currentUser)
             .get().addOnSuccessListener {
-                place = it.get("${constances.FIELD_PLACETAKEN}").toString()
+                place = it.get(constances.FIELD_PLACETAKEN).toString()
                 if (place.isEmpty()) {
-                    Toast.makeText(this, "${constances.NO_PLACE_TAKEN}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, constances.NO_PLACE_TAKEN, Toast.LENGTH_SHORT).show()
                 } else {
 
-                    callDialog.setTitle("${constances.FREE_PLACE}")
-                    callDialog.setMessage("${constances.FREE_RENT}")
+                    callDialog.setTitle(constances.FREE_PLACE)
+                    callDialog.setMessage(constances.FREE_RENT)
                     callDialog.setIcon(R.drawable.question)
-                    callDialog.setPositiveButton("${constances.OK}") { dialog, id ->
-
-                        db.collection("${constances.DB_USERS}")
+                    callDialog.setPositiveButton(constances.OK) { dialog, id ->
+                        db.collection(constances.DB_USERS)
                             .document("$currentUser")
                             .get().addOnSuccessListener {
                                 db.collection("${constances.DB_USERS}")
@@ -87,7 +91,11 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
-
+    /**
+     * Описание метода (раз уж оно есть) обычно пишут перед методом, а не внутри
+     * Если оформить все по красоте (подробнее тут https://kotlinlang.org/docs/kotlin-doc.html),
+     * то можно генерить потом удобную документацию
+     */
     fun parkingClicks(view: View) {
             /*При нажатии на иконку парковочного места, забивает за юзером выбранное место
                При попытке занять более одного места выдает тост о том, что так нельзя
@@ -102,6 +110,11 @@ class MainActivity : AppCompatActivity() {
                     place = it.get("${constances.FIELD_PLACETAKEN}").toString()
                     if (place.isEmpty()) {
                         when (view.id) {
+                            /**
+                             *  в этих трех кейсах явное дублирование кода, этого нужно избегать
+                             *  выделяешь общую логику в отдельный метод, а то что отличается
+                             *  (в данном случае константы RENT и PLACE) передаешь как параметры
+                             */
                             bindingClass.place1.id -> {
                                 callDialog.setTitle("${constances.RENT_TITLE}")
                                 callDialog.setMessage("${constances.RENT1}")
@@ -206,5 +219,4 @@ class MainActivity : AppCompatActivity() {
                     else {Toast.makeText(this, "${constances.PLACE_TAKEN_ERROR}", Toast.LENGTH_SHORT).show()}
                 }
         }
-
 }

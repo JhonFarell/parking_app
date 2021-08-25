@@ -57,6 +57,10 @@ class Registration : AppCompatActivity() {
                     auth.createUserWithEmailAndPassword(email, pword)
                         .addOnCompleteListener{ task ->
                             if (task.isSuccessful) {
+                                /**
+                                 *  тут юзер получается, но никак не используется
+                                 *  и нажми уже ctrl + alt + L, а то форматирование разъебалось
+                                 */
                                 val firebaseUser: FirebaseUser = task.result!!.user!!
 
                             Toast.makeText(

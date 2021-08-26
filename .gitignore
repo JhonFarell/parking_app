@@ -1,4 +1,4 @@
-.gitiпnore
+.gitignore
 *.iml
 .gradle
 /local.properties

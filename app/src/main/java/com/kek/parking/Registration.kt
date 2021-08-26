@@ -36,7 +36,7 @@ class Registration : AppCompatActivity() {
             when {
                 emailIsEmpty -> {
                     Toast.makeText(
-                        this@Registration,
+                        this,
                         "${constances.EMAIL_ERROR_MESSAGE}",
                         Toast.LENGTH_SHORT
                     ).show()

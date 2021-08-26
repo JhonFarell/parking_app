@@ -24,18 +24,18 @@ class LoginScreen : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
     }
 
-    fun registerClick (view: View) {
+    fun registerClick(view: View) {
         val intent = Intent(this, Registration::class.java)
         startActivity(intent)
     }
 
-    fun logInClick (view: View) {
+    fun logInClick(view: View) {
         var emailIsEmpty = TextUtils.isEmpty(bindingClass.loginField.text.toString().trim())
         var passwordIsEmpty = TextUtils.isEmpty(bindingClass.passwordField.text.toString().trim())
 
         when {
             emailIsEmpty -> {
-                Toast.makeText(this,"${constances.LOGIN_FAILED}", Toast.LENGTH_SHORT)
+                Toast.makeText(this, "${constances.LOGIN_FAILED}", Toast.LENGTH_SHORT)
             }
             passwordIsEmpty -> {
                 Toast.makeText(this, "${constances.LOGIN_FAILED}", Toast.LENGTH_SHORT)
@@ -44,16 +44,15 @@ class LoginScreen : AppCompatActivity() {
                 var email: String = bindingClass.loginField.text.toString().trim()
                 var password: String = bindingClass.passwordField.text.toString().trim()
 
-                auth.signInWithEmailAndPassword(email,password)
-                    .addOnCompleteListener{ task ->
-                       if (task.isSuccessful) {
-                           var intent = Intent (this, MainActivity::class.java)
-                           startActivity(intent)
-                           finish()
-                    }
-                        else {
-                           Toast.makeText(this, "${constances.LOGIN_FAILED}", Toast.LENGTH_SHORT)
-                    }
+                auth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            var intent = Intent(this, MainActivity::class.java)
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            Toast.makeText(this, "${constances.LOGIN_FAILED}", Toast.LENGTH_SHORT)
+                        }
 
                     }
             }
